@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewreport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <label for="Speech Recognition">Speech Recognition</label>
+    <input type="text" name="" id="speechToText"
+    placeholder="speak something" onclick=record()>
+
+    <script>
+        function record() {
+            const recognition = new webkitSpeechRecognition();
+            recognition.language = "ko";
+
+            recognition.onresult = function(event) {
+                // console.log(event);
+                document.getElementById('speechToText').value = event.results[0][0].transcript;
+            }
+            recognition.start();
+        }
+    </script>
+</body>
+</html>
