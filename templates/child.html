@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+</html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Speech Recognition in python</title>
+
+
+    <script type="text/javascript">
+        function setParentText(){
+             opener.document.getElementById("pInput").value = document.getElementById("cInput").value
+        }
+   </script>
+
+</head>
+<body>
+    <br>
+    <b>자식창</b>
+    <br><br>
+
+    <form method="post" enctype="multipart/form-data" id="cInput"> <input type="button" value="전달하기" onclick="setParentText()">
+    <br><br>
+    <input type="button" value="창닫기" onclick="window.close()">
+</body>
+
+
+</head>
+<body>
+<div id="speechContainer">
+    <h1>speech to text</h1>
+    <form method="post" enctype="multipart/form-data">
+        <br>
+    </form>
+
+    {% if transcript !="" %}
+        <div id="speechTranscriptContainer">
+            <h1>Transcript</h1>
+            <p id="speechText">{{ transcript }}</p>
+        </div>
+    {% endif %}}
+</div>
+</body>
+</html>
+

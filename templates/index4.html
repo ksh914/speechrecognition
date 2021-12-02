@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Speech Recognition in Python</title>
+    <script>
+        function stt() {
+            const message1 = alert("말씀하세요");
+            document.getElementById("speechTranscriptContainer").innerHTML=message1
+        }
+    </script>
+</head>
+<body>
+<div id="speechContainer">
+    <h1>Recording</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="button" value="STT START" onclick='alert("말씀하세요")'/>
+        <br>
+    </form>
+</div>
+<div id="speechTranscriptContainer">
+        <h1>Transcript</h1>
+        <p>{{transcript}}</p>
+</div>
+</body>
+</html>

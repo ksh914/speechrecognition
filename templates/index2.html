@@ -2,26 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewreport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>HTML-onclick</title>
+
 </head>
-<body>
-    <label for="Speech Recognition">Speech Recognition</label>
-    <input type="text" name="" id="speechToText"
-    placeholder="speak something" onclick=record()>
-
-    <script>
-        function record() {
-            const recognition = new webkitSpeechRecognition();
-            recognition.language = "ko";
-
-            recognition.onresult = function(event) {
-                // console.log(event);
-                document.getElementById('speechToText').value = event.results[0][0].transcript;
+<body style="font-size:32px">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type=text/javascript>
+    $(document).ready(function(){
+        $.ajax({
+            type:'GET',
+            url:'index3.html',
+            dataType:'text',
+            success: function(data){
+                print(data)
+            },
+            error:function(){
+                print('다시 말씀해주세요');
             }
-            recognition.start();
-        }
-    </script>
+        })
+    })
+</script>
+
+
+<div class='container'>
+<h3>Test</h3>
+    <form>
+        <a href=# id=test><button class='btn btn-default'>Test</button></a>
+    </form>
+</div>
 </body>
 </html>
