@@ -1,3 +1,4 @@
+import ssl
 from flask import Flask, render_template, request, redirect
 import speech_recognition as sr
 
@@ -11,4 +12,5 @@ def index3():
 
 
 if __name__ == "__main__":
-    app.run('127.0.0.1', port=5001, debug=True)
+
+    app.run('0.0.0.0', port=5000, ssl_context=ssl_context)
